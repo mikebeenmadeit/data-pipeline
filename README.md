@@ -50,3 +50,15 @@ Day 7: Document learnings and architecture diagram
 - SQL query in Athena editor
 - Query data preview
 - Query result output
+
+## Day 5 — Athena Queries for Churn Analysis
+
+On Day 5, I queried the churn dataset in **Amazon Athena** to extract insights.
+
+### Queries & Results
+- **Churn by Gender**
+  ```sql
+  SELECT gender, Churn, COUNT(*) AS total
+  FROM customer_churn_data_michael
+  GROUP BY gender, Churn
+  ORDER BY gender, total DESC;
