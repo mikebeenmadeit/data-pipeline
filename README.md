@@ -62,3 +62,8 @@ On Day 5, I queried the churn dataset in **Amazon Athena** to extract insights.
   FROM customer_churn_data_michael
   GROUP BY gender, Churn
   ORDER BY gender, total DESC;
+
+## Architecture
+
+![Architecture Diagram](architecture.png)
+
