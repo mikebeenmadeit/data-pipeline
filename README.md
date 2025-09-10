@@ -38,3 +38,15 @@ Day 4: Run queries in Athena against churn dataset
 Day 5: Visualize data using Amazon QuickSight
 Day 6: Automate ETL job in AWS Glue
 Day 7: Document learnings and architecture diagram
+
+## Day 4 — Query Data with Athena
+- Connected Athena to Glue Data Catalog
+- Created S3 bucket for Athena query results (`athena-query-results-michael1`)
+- Ran SQL queries against churn dataset
+- Verified query results in Athena
+
+### Screenshots
+- Athena query result bucket in S3
+- SQL query in Athena editor
+- Query data preview
+- Query result output
