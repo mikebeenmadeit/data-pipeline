@@ -38,3 +38,13 @@ Columns (sample):
   ```sql
   SELECT COUNT(*) FROM customer_churn_data_michael;
 
+
+## 3. Cleanup View Created
+A clean view `churn_clean` was created in Athena:
+
+```sql
+SELECT *
+FROM churn_clean
+LIMIT 10;
+
+
