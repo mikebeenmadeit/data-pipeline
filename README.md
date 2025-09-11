@@ -1,68 +1,51 @@
-Week 1 — Data Pipeline Project
-📌 Overview
+Week 1 – AWS Data Pipeline (S3 → Glue → Athen
+a)
+📌 Project Overview
+This project demonstrates building a serverless data pipeline on AWS as part of my cloud engineering portfolio. The goal is to ingest raw customer churn data, catalog it for querying, and prepare it for future analytics and machine learning.
 
-This project demonstrates building a simple data pipeline on AWS as part of my cloud engineering learning path.
-The goal is to ingest raw data, catalog it for querying, and prepare it for future analytics.
+Key AWS Services:
+Amazon S3 – raw data storage
+AWS Glue – crawler & Data Catalog for schema inference
+Amazon Athena – query engine for analysis
 
-Key AWS services used:
-S3 — raw data storage
-Glue — crawler and Data Catalog
-Athena — query engine (coming next)
 
-✅ Accomplishments
+ Accomplishments
 
 Day 1 — Secure & Cost Control Setup
-Set up AWS Budgets & billing alerts
-Enabled IAM best practices: created admin user (no root), enabled MFA
-Deliverables: AWS budget alerts + secure IAM admin in place
+Created AWS Budgets & billing alerts
+Enabled IAM best practices: no root use, MFA enabled, created admin IAM user
+
+Deliverables: Budget alerts active, IAM admin user secured
 
 Day 2 — S3 Bucket & Data Upload
-Created S3 bucket: customer-churn-data-michael
-Uploaded the customer churn dataset (CSV)
+Created S3 bucket customer-churn-data-michael
+Uploaded Telco Customer Churn dataset (CSV)
 Verified dataset upload in S3 console
-Deliverables: raw dataset stored securely in S3
 
-Day 3 — Glue Crawler & Data Catalog
-Created Glue database: churn_db
+Deliverables: Dataset stored securely in S3
+
+Day 3 — Glue Database & Crawler
+Created Glue database churn_db
 Built Glue Crawler to scan S3 bucket and infer schema
-Verified creation of customer_churn table in Glue Data Catalog
-Deliverables: dataset schema registered in Glue, ready for Athena queries
+Verified schema creation in Glue Data Catalog
 
-Screenshots
+Deliverables: customer_churn_data_michael table available for Athena queries
 
-All screenshots are stored in the folder
+Day 4 — Query Data with Athena
+Connected Athena to Glue Data Catalog
+Created Athena results bucket athena-query-results-michael1
+Ran SQL queries against churn dataset
+Verified queries and results saved in S3
 
-Next Steps
+Deliverables: Athena queries + results
 
-Day 4: Run queries in Athena against churn dataset
-Day 5: Visualize data using Amazon QuickSight
-Day 6: Automate ETL job in AWS Glue
-Day 7: Document learnings and architecture diagram
+Day 5 — Data Readiness & Cleanup
+Wrote Data Readiness Report (data-readiness.md) documenting schema, nulls, type issues, and imbalance in churn labels
+Created clean view (churn_clean) with proper numeric casting and categorical handling for ML readiness
 
-## Day 4 — Query Data with Athena
-- Connected Athena to Glue Data Catalog
-- Created S3 bucket for Athena query results (`athena-query-results-michael1`)
-- Ran SQL queries against churn dataset
-- Verified query results in Athena
-
-### Screenshots
-- Athena query result bucket in S3
-- SQL query in Athena editor
-- Query data preview
-- Query result output
-
-## Day 5 — Athena Queries for Churn Analysis
-
-On Day 5, I queried the churn dataset in **Amazon Athena** to extract insights.
-
-### Queries & Results
-- **Churn by Gender**
-  ```sql
-  SELECT gender, Churn, COUNT(*) AS total
-  FROM customer_churn_data_michael
-  GROUP BY gender, Churn
-  ORDER BY gender, total DESC;
-
+Deliverables:
+data-readiness.md
+Athena view churn_clean created and validated
 ## Architecture
 
 ![Architecture Diagram](architecture.png)
